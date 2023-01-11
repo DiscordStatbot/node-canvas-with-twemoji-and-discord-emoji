@@ -1,7 +1,7 @@
 // @flow
 // Copyright Twitter Inc. Licensed under MIT
 // https://github.com/twitter/twemoji-parser/blob/master/LICENSE.md
-import emojiRegex from '../lib/regex';
+const emojiRegex = require('../lib/regex');
 
 // type EmojiEntity = {|
 //   type: string,
@@ -15,9 +15,9 @@ import emojiRegex from '../lib/regex';
 //   assetType?: 'png' | 'svg'
 // |};
 
-export const TypeName = 'emoji';
+const TypeName = 'emoji';
 
-export function parse(text, options) {
+function parse(text, options) {
   const assetType = options && options.assetType ? options.assetType : 'svg';
   const getTwemojiUrl =
     options && options.buildUrl
@@ -55,7 +55,7 @@ const zeroWidthJoiner = String.fromCharCode(0x200d);
 
 const removeVS16s = rawEmoji => (rawEmoji.indexOf(zeroWidthJoiner) < 0 ? rawEmoji.replace(vs16RegExp, '') : rawEmoji);
 
-export function toCodePoints(unicodeSurrogates){
+function toCodePoints(unicodeSurrogates){
   const points = [];
   let char = 0;
   let previous = 0;
@@ -73,3 +73,5 @@ export function toCodePoints(unicodeSurrogates){
   }
   return points;
 }
+
+module.exports = { parse }
