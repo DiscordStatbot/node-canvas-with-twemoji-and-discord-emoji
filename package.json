@@ -10,7 +10,8 @@
   "author": "flazepe",
   "dependencies": {
     "canvas": "^2.7.0",
-    "twemoji": "^14.0.2"
+    "twemoji": "^14.0.2",
+    "twemoji-parser": "github:DiscordStatbot/twemoji-parser#master"
   },
   "license": "MIT",
   "repository": {
