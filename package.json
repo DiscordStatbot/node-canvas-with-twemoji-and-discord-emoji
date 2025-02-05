@@ -9,7 +9,7 @@
   },
   "author": "flazepe",
   "dependencies": {
-    "canvas": "^2.7.0",
+    "canvas": "^3.1.0",
     "twemoji": "^14.0.2"
   },
   "license": "MIT",
